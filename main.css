@@ -1,0 +1,59 @@
+.circle {
+	border-radius: 50%;
+	border: 3px solid black;
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	bottom: 30%;
+	left: 42.5%;
+
+}
+
+.play {
+	height: 250px;
+	width: 250px;
+	display: inline-block;
+	margin-bottom: 0;
+	float: left;
+}
+
+.tl {
+	border-radius: 100% 0 0 0;
+	border-top: 10px solid black;
+	border-left: 10px solid black;
+}
+
+.tr {
+	border-radius: 0 100% 0 0;
+	border-top: 10px solid black;
+	border-right: 10px solid black;
+}
+.bl {
+	border-radius: 0 0 0 100%;
+	border-bottom: 10px solid black;
+	border-left: 10px solid black;
+}
+
+.br {
+	border-radius: 0 0 100% 0;
+	border-bottom: 10px solid black;
+	border-right: 10px solid black;
+}
+
+div {
+	height: 50%;
+	width: 50%;
+	/*margin: 100px auto;*/
+	text-align: center;
+}
+
+.top {
+	margin-top: 100px;
+}
+
+.tl:hover,
+.tr:hover,
+.bl:hover,
+.br:hover {
+	background-color: rgba(70, 130, 180, 0.2);
+}
