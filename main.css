@@ -3,10 +3,13 @@
 	border: 10px solid black;
 	height: 300px;
 	width: 300px;
-	position: absolute;
-	bottom: 150px;
-	left: 150px;
+	position: relative;
+/*	bottom: 150px;
+	left: 150px;*/
 	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	top: 100px;
 }
 
 /*.container {
@@ -53,7 +56,7 @@
 	background: blue;
 }
 
-div {
+.row {
 	height: 50%;
 	width: 50%;
 	margin-left: auto;
