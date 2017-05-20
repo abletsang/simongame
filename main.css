@@ -1,12 +1,34 @@
+body {
+	font-family: "Montserrat";
+}
+
+h1 {
+	text-align: center;
+	margin-top: 60px;
+	font-size: 48px;
+}
+
+h2, h4 {
+	text-align: center;
+	position: relative;
+	bottom: 430px;
+}
+
+h4 {
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+
 .circle {
 	border-radius: 50%;
-	border: 3px solid black;
-	height: 200px;
-	width: 200px;
-	position: absolute;
-	bottom: 30%;
-	left: 42.5%;
-
+	border: 10px solid black;
+	height: 300px;
+	width: 300px;
+	position: relative;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	top: 100px;
 }
 
 .play {
@@ -21,34 +43,39 @@
 	border-radius: 100% 0 0 0;
 	border-top: 10px solid black;
 	border-left: 10px solid black;
+	background: red;
 }
 
 .tr {
 	border-radius: 0 100% 0 0;
 	border-top: 10px solid black;
 	border-right: 10px solid black;
+	background: green;
 }
 .bl {
 	border-radius: 0 0 0 100%;
 	border-bottom: 10px solid black;
 	border-left: 10px solid black;
+	background: yellow;
 }
 
 .br {
 	border-radius: 0 0 100% 0;
 	border-bottom: 10px solid black;
 	border-right: 10px solid black;
+	background: blue;
 }
 
-div {
+.row {
 	height: 50%;
 	width: 50%;
-	/*margin: 100px auto;*/
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .top {
-	margin-top: 100px;
+	margin-top: 40px;
+	margin-bottom: 0;
 }
 
 .tl:hover,
@@ -56,4 +83,28 @@ div {
 .bl:hover,
 .br:hover {
 	background-color: rgba(70, 130, 180, 0.2);
+}
+
+.row {
+	width: 525px;
+}
+
+.fa-circle, span {
+	position: relative;
+	font-size: 20px;
+	bottom: 410px;
+	left: 65px;
+	padding-right: 5px;
+}
+
+span:first-of-type {
+	padding-right: 5px;
+}
+
+.start {
+	color: green;
+}
+
+.strict {
+	color: red;
 }
