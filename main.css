@@ -5,6 +5,18 @@ body {
 h1 {
 	text-align: center;
 	margin-top: 60px;
+	font-size: 48px;
+}
+
+h2, h4 {
+	text-align: center;
+	position: relative;
+	bottom: 430px;
+}
+
+h4 {
+	font-size: 36px;
+	margin-bottom: 10px;
 }
 
 .circle {
@@ -80,11 +92,19 @@ h1 {
 .fa-circle, span {
 	position: relative;
 	font-size: 20px;
-	bottom: 300px;
-	left: 70px;
+	bottom: 410px;
+	left: 65px;
 	padding-right: 5px;
 }
 
 span:first-of-type {
 	padding-right: 5px;
+}
+
+.start {
+	color: green;
+}
+
+.strict {
+	color: red;
 }
