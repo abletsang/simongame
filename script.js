@@ -7,6 +7,7 @@ var buttons = document.querySelectorAll(".play");
 var playBtn = document.querySelector(".start");
 var strictBtn = document.querySelector(".strict");
 var scoreDisplay = document.querySelector(".score");
+var messageDisplay = document.querySelector(".message");
 var order = [];
 var playerOrder = [];
 var score = 0;
@@ -16,6 +17,7 @@ var turn = false;
 
 playBtn.addEventListener("click", function() {
 	playBtn.classList.toggle("on");
+	messageDisplay.textContent = "";
 	play = !play;
 	if (play === false) {
 		turn = false;
@@ -75,11 +77,18 @@ for (var i = 0; i < buttons.length; i++) {
 			console.log(this.id);
 			if (playerOrder[i] !== order[i]) {
 				if (strict) {
-
+					playBtn.classList.toggle("on");
+					play = false;
+					order = [];
+					messageDisplay.textContent = "You lost! Click the PLAY button to play again.";
 				} else {
 					turn = false;
-					console.log("try again");
-					showOrder();
+					messageDisplay.textContent = "Watch and try again.";
+					setTimeout(function() {
+						messageDisplay.textContent = "";
+						showOrder();
+					}, 1000)
+					
 				}
 				return;
 			} else if (playerOrder.length == order.length) {
