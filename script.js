@@ -32,6 +32,10 @@ function playNormal() {
 	var random = Math.floor(Math.random() * 4);
 	order.push(random);
 	console.log(order);
+	showOrder();
+}
+
+function showOrder() {
 	timeUp = 0;
 	timeDown = 1000;
 	for (var i = 0; i < order.length; i ++) {
@@ -67,12 +71,19 @@ for (var i = 0; i < buttons.length; i++) {
 			playerOrder.push(Number(this.id));
 			console.log(this.id);
 			if (playerOrder[i] !== order[i]) {
-				turn = false;
-				console.log("you lose");
+				if (strict) {
+
+				} else {
+					turn = false;
+					console.log("try again");
+					showOrder();
+				}
 				return;
 			} else if (playerOrder.length == order.length) {
 				turn = false;
 				console.log("all right!");
+				score++;
+				scoreDisplay.textContent = score;
 				playNormal();
 			}
 			i++;
