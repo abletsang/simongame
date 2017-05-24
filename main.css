@@ -78,12 +78,21 @@ h4 {
 	margin-bottom: 0;
 }
 
-/*.tl:hover,
+.tl:hover,
 .tr:hover,
 .bl:hover,
 .br:hover {
-	border-color: gray;
-}*/
+	border-color: #2C3538;
+}
+
+.start,
+.strict {
+	opacity: 0.5;
+}
+
+.on {
+	opacity: 1;
+}
 
 .row {
 	width: 525px;

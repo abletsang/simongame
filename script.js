@@ -15,6 +15,7 @@ var strict = false;
 var turn = false;
 
 playBtn.addEventListener("click", function() {
+	playBtn.classList.toggle("on");
 	if (play === false) {
 		playNormal();
 	} else {
@@ -24,6 +25,7 @@ playBtn.addEventListener("click", function() {
 });
 
 strictBtn.addEventListener("click", function() {
+	strictBtn.classList.toggle("on");
 	strict = !strict;
 });
 
