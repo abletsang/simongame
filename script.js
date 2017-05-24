@@ -6,11 +6,11 @@
 var buttons = document.querySelectorAll(".play");
 var playBtn = document.querySelector(".start");
 var strictBtn = document.querySelector(".strict");
-var scoreDisplay = document.querySelector(".score");
+var countDisplay = document.querySelector(".count");
 var messageDisplay = document.querySelector(".message");
 var order = [];
 var playerOrder = [];
-var score = 0;
+var count = 0;
 var play = false;
 var strict = false;
 var turn = false;
@@ -22,7 +22,11 @@ playBtn.addEventListener("click", function() {
 	if (play === false) {
 		turn = false;
 		order = [];
+		countDisplay.textContent = "0";
+		count = 0;
 	} else {
+		countDisplay.textContent = "0";
+		count = 0;
 		playNormal();
 	}
 });
@@ -94,8 +98,8 @@ for (var i = 0; i < buttons.length; i++) {
 			} else if (playerOrder.length == order.length) {
 				turn = false;
 				console.log("all right!");
-				score++;
-				scoreDisplay.textContent = score;
+				count++;
+				countDisplay.textContent = count;
 				playNormal();
 			}
 			i++;
