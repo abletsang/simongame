@@ -10,7 +10,7 @@ var countDisplay = document.querySelector(".count");
 var messageDisplay = document.querySelector(".message");
 var order = [];
 var playerOrder = [];
-var count = 0;
+var count = 1;
 var play = false;
 var strict = false;
 var turn = false;
@@ -36,11 +36,12 @@ strictBtn.addEventListener("click", function() {
 	strict = !strict;
 });
 
-var i = 0;
 function playNormal() {
 	var random = Math.floor(Math.random() * 4);
 	order.push(random);
 	console.log(order);
+	count++;
+	countDisplay.textContent = count;
 	showOrder();
 }
 
@@ -97,9 +98,10 @@ for (var i = 0; i < buttons.length; i++) {
 				return;
 			} else if (playerOrder.length == order.length) {
 				turn = false;
-				console.log("all right!");
-				count++;
-				countDisplay.textContent = count;
+				if (count === 20) {
+					messageDisplay.textContent = "YOU WON! Click the PLAY button to play again.";
+					return;
+				}
 				playNormal();
 			}
 			i++;
