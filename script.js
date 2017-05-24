@@ -16,11 +16,12 @@ var turn = false;
 
 playBtn.addEventListener("click", function() {
 	playBtn.classList.toggle("on");
+	play = !play;
 	if (play === false) {
-		playNormal();
-	} else {
-		play = false;
 		turn = false;
+		order = [];
+	} else {
+		playNormal();
 	}
 });
 
