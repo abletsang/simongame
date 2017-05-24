@@ -15,6 +15,13 @@ var play = false;
 var strict = false;
 var turn = false;
 
+var sound = [
+	new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+	new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+	new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+	new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
+	];
+
 playBtn.addEventListener("click", function() {
 	playBtn.classList.toggle("on");
 	messageDisplay.textContent = "";
@@ -49,17 +56,18 @@ function showOrder() {
 	timeUp = 0;
 	timeDown = 1000;
 	for (var i = 0; i < order.length; i ++) {
-		doLightUp(buttons[order[i]], timeUp);
+		doLightUp(buttons[order[i]], timeUp, order[i]);
 		doLightOut(buttons[order[i]], timeDown, i);
 		timeUp += 1000;
 		timeDown += 1000;
 	}
 }
 
-function doLightUp(button, time) {
+function doLightUp(button, time, num) {
   setTimeout(function() {
   	setTimeout(function() {
   		button.classList.add("lightUp");
+  		sound[num].play();
   	}, 300);
   }, time);
 }
@@ -76,9 +84,9 @@ function doLightOut(button, time, num) {
 
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].addEventListener("click", function() {
-	var i = 0;
 		if (turn === true) {
 			playerOrder.push(Number(this.id));
+			sound[Number(this.id)].play();
 			console.log(this.id);
 			if (playerOrder[i] !== order[i]) {
 				if (strict) {
