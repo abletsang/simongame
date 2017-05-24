@@ -1,8 +1,3 @@
-// var topLeft = document.querySelector(".tl");
-// var topRight = document.querySelector(".tr");
-// var bottomLeft = document.querySelector(".bl");
-// var bottomRight = document.querySelector(".br");
-
 var buttons = document.querySelectorAll(".play");
 var playBtn = document.querySelector(".start");
 var strictBtn = document.querySelector(".strict");
@@ -82,11 +77,20 @@ function doLightOut(button, time, num) {
   }, time);
 }
 
+function unLight(item) {
+	setTimeout(function() {
+		item.classList.remove("lightUp");
+	}, 700);
+}
+
 for (var i = 0; i < buttons.length; i++) {
 	buttons[i].addEventListener("click", function() {
 		if (turn === true) {
 			playerOrder.push(Number(this.id));
 			sound[Number(this.id)].play();
+			this.classList.add("lightUp");
+			// var butt = this;
+			unLight(this);
 			console.log(this.id);
 			if (playerOrder[i] !== order[i]) {
 				if (strict) {
