@@ -94,17 +94,18 @@ for (var i = 0; i < buttons.length; i++) {
 					play = false;
 					order = [];
 					messageDisplay.textContent = "You lost! Click the PLAY button to play again.";
+					return;
 				} else {
 					turn = false;
 					messageDisplay.textContent = "Watch and try again.";
 					setTimeout(function() {
 						messageDisplay.textContent = "";
 						showOrder();
-					}, 1000)
-					
+					}, 1000);
+					return;
 				}
-				return;
-			} else if (playerOrder.length == order.length) {
+			}
+			} if (playerOrder.length == order.length) {
 				turn = false;
 				if (count === 20) {
 					playBtn.classList.toggle("on");
@@ -113,10 +114,12 @@ for (var i = 0; i < buttons.length; i++) {
 					messageDisplay.textContent = "YOU WON! Click the PLAY button to play again.";
 					return;
 				}
-				playNormal();
+				setTimeout(function() {
+					playNormal();
+				}, 1000);
+				
 			}
-			i++;
-		}
+		// }
 	});
 }
 
