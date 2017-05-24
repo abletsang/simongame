@@ -99,6 +99,9 @@ for (var i = 0; i < buttons.length; i++) {
 			} else if (playerOrder.length == order.length) {
 				turn = false;
 				if (count === 20) {
+					playBtn.classList.toggle("on");
+					play = false;
+					order = [];
 					messageDisplay.textContent = "YOU WON! Click the PLAY button to play again.";
 					return;
 				}
