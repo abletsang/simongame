@@ -89,7 +89,6 @@ for (var i = 0; i < buttons.length; i++) {
 			playerOrder.push(Number(this.id));
 			sound[Number(this.id)].play();
 			this.classList.add("lightUp");
-			// var butt = this;
 			unLight(this);
 			console.log(this.id);
 			if (playerOrder[i] !== order[i]) {
